@@ -1,0 +1,31 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    uid: influxdb-main
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    jsonData:
+      version: Flux
+      organization: network-monitor
+      defaultBucket: network_monitor
+      tlsSkipVerify: true
+    secureJsonData:
+      token: network-monitor-token
+    isDefault: true
+    editable: true
+
+  - name: InfluxDB-Longterm
+    uid: influxdb-longterm
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    jsonData:
+      version: Flux
+      organization: network-monitor
+      defaultBucket: network_monitor_longterm
+      tlsSkipVerify: true
+    secureJsonData:
+      token: network-monitor-token
+    editable: true
